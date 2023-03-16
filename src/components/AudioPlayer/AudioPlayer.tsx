@@ -10,7 +10,6 @@ interface AudioPlayerProps {}
 const AudioPlayer: React.FunctionComponent<AudioPlayerProps> = () => {
   const audioCtxContainer = useRef<null | AudioContext>(null);
   const gainNodeContainer = useRef<null | GainNode>(null);
-  // const analyzerNodeContainer = useRef<null | AnalyserNode>(null);
   const audioElementContainer = useRef<null | HTMLAudioElement>(null);
 
   const trackUrl = useAppSelector(getTrackUrl);
@@ -20,20 +19,13 @@ const AudioPlayer: React.FunctionComponent<AudioPlayerProps> = () => {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       audioCtxContainer.current = new AudioContext();
       gainNodeContainer.current = audioCtxContainer.current.createGain();
-      // analyzerNodeContainer.current =
-      //   audioCtxContainer.current.createAnalyser();
-      // analyzerNodeContainer.current.fftSize = 2048;
 
       const track = audioCtxContainer.current.createMediaElementSource(
         audioElementContainer.current
       );
-      // const bufferLength = analyzerNodeContainer.current.frequencyBinCount;
-      // const dataArray = new Uint8Array(bufferLength);
-      // analyzerNodeContainer.current.getByteFrequencyData(dataArray);
 
       track
         .connect(gainNodeContainer.current)
-        // .connect(analyzerNodeContainer.current)
         .connect(audioCtxContainer.current.destination);
       audioElementContainer.current.crossOrigin = "anonymous";
     }
@@ -55,11 +47,7 @@ const AudioPlayer: React.FunctionComponent<AudioPlayerProps> = () => {
 
   return (
     <div>
-      <audio
-        src={trackUrl}
-        ref={audioElementContainer}
-        autoPlay={false}
-      ></audio>
+      <audio src={trackUrl} ref={audioElementContainer}></audio>
       <BackButton />
       <AudioControls
         audioCtxContainer={audioCtxContainer}
