@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  align-items: center;
 }
 
 .form {
@@ -45,6 +46,7 @@
   border: 0.5px solid transparent;
   outline: none;
   transition: border 0.5s;
+  border-radius: 0;
 
   &::placeholder {
     color: #a4a3a4;
