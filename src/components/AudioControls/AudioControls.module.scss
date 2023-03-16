@@ -1,0 +1,49 @@
+.playerWrapper {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "play speed"
+    "bar bar"
+    "time volume";
+  grid-auto-rows: min-content;
+  row-gap: 45px;
+  grid-template-columns: 40px 200px;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #cfd3d6;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 40px 250px;
+  }
+}
+
+.loader {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.time {
+  margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.playControl {
+  grid-area: play;
+}
+
+.speedControl {
+  grid-area: speed;
+  justify-self: end;
+}
+
+.barControl {
+  grid-area: bar;
+}
+
+.volumeControl {
+  grid-area: volume;
+}

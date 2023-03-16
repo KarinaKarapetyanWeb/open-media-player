@@ -1,0 +1,28 @@
+.playBtn {
+  font: inherit;
+  color: #ffffff;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  text-shadow: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  outline: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #f8d231;
+    outline-offset: 3px;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+}

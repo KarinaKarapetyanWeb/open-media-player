@@ -1,0 +1,103 @@
+.wrapper {
+  display: flex;
+}
+
+.form {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.label {
+  font-weight: 400;
+  display: block;
+  margin: 0;
+  margin-bottom: 20px;
+  letter-spacing: -0.4px;
+}
+
+.inputWrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.inputWrapperError {
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("../../assets/images/error-icon.svg");
+    background-size: contain;
+  }
+}
+
+.input {
+  display: block;
+  width: 100%;
+  font: inherit;
+  background-color: #ffffff;
+  padding: 16px;
+  padding-right: 38px;
+  border: 0.5px solid transparent;
+  outline: none;
+  transition: border 0.5s;
+
+  &::placeholder {
+    color: #a4a3a4;
+  }
+
+  &:hover,
+  &:focus-visible {
+    border-color: #b0b3b5;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 32px 16px;
+    padding-right: 45px;
+  }
+}
+
+.inputError {
+  border-color: #c6a827;
+}
+
+.submitBtn {
+  flex-shrink: 0;
+  display: block;
+  font: inherit;
+  border: none;
+  width: 64px;
+  height: 64px;
+  background-color: #f8d231;
+  background-image: url("../../assets/images/arrow-icon.svg");
+  background-repeat: no-repeat;
+  background-size: 36px 33px;
+  background-position: center;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.5s;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #ebc51b;
+  }
+
+  @media (min-width: 1200px) {
+    width: 96px;
+    height: 96px;
+  }
+}
+
+.errorText {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: #c6a827;
+}

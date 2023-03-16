@@ -1,0 +1,30 @@
+@keyframes loading {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+.loader {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 3px;
+    width: 40%;
+    background-color: #ffffff;
+    left: 0;
+    top: 0;
+    animation-name: loading;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+}

@@ -1,0 +1,74 @@
+.disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.speedWrapper {
+  position: relative;
+}
+
+.openBtn {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  text-shadow: none;
+  cursor: pointer;
+  border: none;
+  background-image: url("../../../assets/images/settings-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 0.5s;
+
+  &:hover {
+    opacity: 0.4;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #f8d231;
+    outline-offset: 3px;
+  }
+}
+
+.speedBtns {
+  position: absolute;
+  padding: 8px;
+  width: 91px;
+  background-color: #ffffff;
+  right: 0;
+  top: 30px;
+  z-index: 2;
+}
+
+.speedBtn {
+  font: inherit;
+  font-size: 20px;
+  line-height: 28px;
+  color: #a4a3a4;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  background-color: transparent;
+  text-shadow: none;
+  cursor: pointer;
+  border: none;
+  transition: color 0.4s;
+
+  &:hover {
+    color: #000000;
+  }
+
+  &:focus-visible {
+    outline: 3px solid #f8d231;
+    outline-offset: 0px;
+  }
+}
+
+.activeBtn {
+  color: #000000;
+}
+
+.speedBtn:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

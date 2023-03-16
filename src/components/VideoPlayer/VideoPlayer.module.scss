@@ -1,0 +1,12 @@
+.video {
+  width: 100%;
+  max-width: 620px;
+
+  @media (min-width: 576px) {
+    height: 270px;
+  }
+
+  @media (min-width: 768px) {
+    height: 350px;
+  }
+}

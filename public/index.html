@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open Media Player</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="page container">
+      <h1 class="visually-hidden">Player</h1>
+      <section class="page__player player section-container">
+        <h2 class="player__title title">
+          Play any audio sources directly in the browser!
+        </h2>
+        <div class="player__container">
+          <noscript>You need to enable JavaScript to run the player.</noscript>
+          <div id="root"></div>
+        </div>
+        <p class="player__desciption">Without any restrictions for free</p>
+        <p class="player__policy">
+          By uploading the audio file, you agree to our<br />
+          <a href="#">Terms of Service.</a>
+        </p>
+      </section>
+      <section class="page__about about section-container">
+        <h2 class="about__title title">How It Works</h2>
+        <p class="about__text">
+          Lorem Ipsum is a "fish" text often used in print and web design. Lorem
+          Ipsum has been the standard "fish" for Latin texts since the early
+          16th century. At that time, an unnamed printer created a large
+          collection of font sizes and shapes, using Lorem Ipsum for print
+          samples.
+        </p>
+      </section>
+      <section class="requirments section-container">
+        <h2 class="requirments__title">Technical requirements</h2>
+        <div class="requirments__btns-wrapper">
+          <button
+            class="requirments__btn requirments__btn--active"
+            type="button"
+            data-name="own"
+          >
+            Own&nbsp;server
+          </button>
+          <button class="requirments__btn" type="button" data-name="amazon">
+            Amazon Instance
+          </button>
+        </div>
+        <div
+          class="requirments__content requirments__content--active"
+          data-content="own"
+        >
+          <dl class="requirments__list">
+            <div class="requirments__item">
+              <dt>OS + apps</dt>
+              <dd>Unix/OSX + docker + nvidia-docker</dd>
+            </div>
+            <div class="requirments__item">
+              <dt>CPU</dt>
+              <dd>4 cores or more (e.g. intel core i5)</dd>
+            </div>
+            <div class="requirments__item">
+              <dt>Memory</dt>
+              <dd>16 GB RAM</dd>
+            </div>
+          </dl>
+          <dl class="requirments__list">
+            <div class="requirments__item">
+              <dt>Free space</dt>
+              <dd>100 GB of free space</dd>
+            </div>
+            <div class="requirments__item">
+              <dt>Graphics hardware</dt>
+              <dd>GPU: NVidia only 2Gb+</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="requirments__content" data-content="amazon">
+          <dl class="requirments__list">
+            <div class="requirments__item">
+              <dt>Instance</dt>
+              <dd>g4dn.xlarge</dd>
+            </div>
+            <div class="requirments__item">
+              <dt>GPU</dt>
+              <dd>1</dd>
+            </div>
+            <div class="requirments__item">
+              <dt>vCPUs</dt>
+              <dd>4</dd>
+            </div>
+          </dl>
+          <dl class="requirments__list">
+            <div class="requirments__item">
+              <dt>Memory</dt>
+              <dd>16 GB RAM</dd>
+            </div>
+            <div class="requirments__item">
+              <dt>Storage</dt>
+              <dd>125 GB</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js" type="module"></script>
+  </body>
+</html>
