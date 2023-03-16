@@ -44,17 +44,7 @@ const AudioControls: React.FunctionComponent<AudioControlsProps> = ({
 
   const handlePlayPauseBtnClick = useCallback(() => {
     setIsPlaying((prev) => !prev);
-
-    if (audioCtxContainer.current?.state === "suspended") {
-      audioCtxContainer.current?.resume();
-    }
-    if (isPlaying) {
-      audioElementContainer.current?.pause();
-    } else {
-      audioElementContainer.current?.play();
-      // updateFrequency();
-    }
-  }, [setIsPlaying, isPlaying, audioCtxContainer, audioElementContainer]);
+  }, [setIsPlaying, isPlaying]);
 
   const handleVolumeChange = useCallback(
     (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -86,6 +76,18 @@ const AudioControls: React.FunctionComponent<AudioControlsProps> = ({
     },
     [audioElementContainer, speed, setSpeed]
   );
+
+  useEffect(() => {
+    if (audioCtxContainer.current?.state === "suspended") {
+      audioCtxContainer.current?.resume();
+    }
+    if (!isPlaying) {
+      audioElementContainer.current?.pause();
+    } else {
+      audioElementContainer.current?.play();
+      // updateFrequency();
+    }
+  }, [isPlaying, audioCtxContainer, audioElementContainer]);
 
   useEffect(() => {
     audioElementContainer.current?.addEventListener("loadedmetadata", () => {

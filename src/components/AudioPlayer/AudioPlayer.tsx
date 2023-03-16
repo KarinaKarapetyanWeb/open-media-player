@@ -55,7 +55,11 @@ const AudioPlayer: React.FunctionComponent<AudioPlayerProps> = () => {
 
   return (
     <div>
-      <audio src={trackUrl} ref={audioElementContainer}></audio>
+      <audio
+        src={trackUrl}
+        ref={audioElementContainer}
+        autoPlay={false}
+      ></audio>
       <BackButton />
       <AudioControls
         audioCtxContainer={audioCtxContainer}
