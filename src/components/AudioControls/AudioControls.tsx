@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import BarControl from "../Common/BarControl/BarControl";
 import PlayControl from "../Common/PlayControl/PlayControl";
 import VolumeControl from "../Common/VolumeControl/VolumeControl";
@@ -21,6 +21,8 @@ const AudioControls: React.FunctionComponent<AudioControlsProps> = ({
   gainNodeContainer,
   audioElementContainer,
 }) => {
+  // const canvasElementContainer = useRef<null | HTMLCanvasElement>(null);
+
   const [audioError, setAudioError] = useState("");
   const [showMessage, setShowMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -34,9 +36,25 @@ const AudioControls: React.FunctionComponent<AudioControlsProps> = ({
     setShowMessage(false);
   };
 
+  // const updateFrequency = () => {
+  //   if (!isPlaying) return;
+  //   console.log("updateFrequency");
+  //   requestAnimationFrame(updateFrequency);
+  // };
+
   const handlePlayPauseBtnClick = useCallback(() => {
     setIsPlaying((prev) => !prev);
-  }, [setIsPlaying, isPlaying]);
+
+    if (audioCtxContainer.current?.state === "suspended") {
+      audioCtxContainer.current?.resume();
+    }
+    if (isPlaying) {
+      audioElementContainer.current?.pause();
+    } else {
+      audioElementContainer.current?.play();
+      // updateFrequency();
+    }
+  }, [setIsPlaying, isPlaying, audioCtxContainer, audioElementContainer]);
 
   const handleVolumeChange = useCallback(
     (evt: React.ChangeEvent<HTMLInputElement>) => {
@@ -68,17 +86,6 @@ const AudioControls: React.FunctionComponent<AudioControlsProps> = ({
     },
     [audioElementContainer, speed, setSpeed]
   );
-
-  useEffect(() => {
-    if (audioCtxContainer.current?.state === "suspended") {
-      audioCtxContainer.current?.resume();
-    }
-    if (isPlaying) {
-      audioElementContainer.current?.play();
-    } else {
-      audioElementContainer.current?.pause();
-    }
-  }, [audioCtxContainer, audioCtxContainer, isPlaying]);
 
   useEffect(() => {
     audioElementContainer.current?.addEventListener("loadedmetadata", () => {
@@ -147,6 +154,8 @@ const AudioControls: React.FunctionComponent<AudioControlsProps> = ({
           disabled={isDisabled}
         />
         <p className={styles.time}>{formatTime(Math.floor(currentTime))}</p>
+
+        {/* <canvas ref={canvasElementContainer}></canvas> */}
       </div>
     </>
   );
