@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+## Тестовое задание 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Форма ввода ссылки и плеер должны быть выполнены с помощью *React*.
 
-## Available Scripts
+В форме располагается поле ввода ссылки в формате “*https://*”. При некорректном вводе ссылки нужно отобразить ошибку, как указано на макете.
 
-In the project directory, you can run:
+При успешном вводе, скрывать форму и в этом же месте отобразить плеер с источником аудио из ссылки.
 
-### `npm start`
+При буферизации аудио потока отображать лоадер в виде бегущей линии. Пример анимации можно увидеть в прототипе компонента.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Сам плеер должен быть реализован с помощью браузерного тега *<audio/>*. Важно отобразить прогресс в секундах, регулятор громкости и добавить возможность изменения прогресса воспроизведения.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+По клику на кнопку “*Back*”, пользователь должен вернуться к форме ввода ссылки.
 
-### `npm test`
+### Пример прямых ссылок для плеера
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Audio
 
-### `npm run build`
+[https://lalalai.s3.us-west-2.amazonaws.com/media/split/a7564eb8-cbf2-40e2-9cb8-6061d8d055a7/no_vocals](https://lalalai.s3.us-west-2.amazonaws.com/media/split/a7564eb8-cbf2-40e2-9cb8-6061d8d055a7/no_vocals)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[https://c5.radioboss.fm:18084/stream](https://c5.radioboss.fm:18084/stream)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Video
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4](https://ia800300.us.archive.org/17/items/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4)
 
-### `npm run eject`
+[https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm](https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Дполнительно выполнено 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Реализовать плеер с использованием Web Audio API.
+- Добавить поддержку проигрывания видео (так же по источнику).
+- Реализовать всплывающие уведомления, в которых можно вывести возникшие ошибки и предупреждения.
+- Реализовать изменение скорости воспроизведения дорожки
